@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="weather-container">
+        <h1>🌤 Weather App</h1>
+        <div class="input-grp">
+            <input type="text" id="cityInput" placeholder="Enter City name here: ">
+        </div>
+        <div class="unit-toggle">
+            <label>
+                <input type="checkbox" id="unitToggle" />Show in Fahrenheit (°F)
+            </label>
+        </div>
+        <div class="weather-data" id="weatherData">
+            <p>🔍 Search or allow location...</p>
+        </div>
+        <p class="small" id="timestamp"></p>
+        <div class="forecast" id="forecastData"></div>
+        <div class="toggle-forecast-view" onclick="toggleForecastView()">🔄 Toggle Forecast View</div>
+        <div class="toggle-mode" onclick="toggleMode()">🌗 Toggle Mode</div>
+
+        <div class="reset-app" onclick="resetApp()">🔄 Reset</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: background 0.5s ease;
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 95vw;
+    max-width: 850px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    text-align: center;
+
+    background-image: url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+
+.weather-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.forecast-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: stretch;
+    transition: all 0.3s;
+}
+
+.forecast-cards.horizontal {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+.weather-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.input-grp {
+    margin: 15px 0;
+}
+
+.unit-toggle {
+
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+input#cityInput {
+    background-color: #2a2e35;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+input#cityInput::placeholder {
+    color: #aaa;
+}
+
+input#cityInput:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px #00bcd4;
+}
+
+.weather-data,
+.forecast-data {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.icon {
+    width: 100px;
+    margin: 10px auto;
+}
+
+.small {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+.forecast-day {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+.forecast-card {
+    flex: 0 0 130px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.forecast-card::-webkit-scrollbar {
+    height: 8px;
+}
+
+.forecast-cards::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.toggle-forecast-view,
+.toggle-mode {
+    margin: 10px auto;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.toggle-forecast-view:hover,
+.toggle-mode:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.toggle-forecast-view:active,
+.toggle-mode:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode {
+    background: linear-gradient(to right top, #fefcea, #f1da36);
+    color: #000;
+}
+
+body.light-mode .weather-container {
+    background: rgba(255, 255, 255, 0.7);
+    color: #000;
+}
+
+.reset-app {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background-color: #ffffff33;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.reset-app:hover {
+    background-color: #ffffff55;
+}
+
+@media(max-width: 700px) {
+    .forecast-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .weather-container {
+        width: 98vw;
+        padding: 10px;
+    }
+
+    .icon {
+        width: 60px;
+    }
+
+    .forecast-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-card {
+        min-width: 90vw;
+        max-width: 98vw;
+    }
+}
