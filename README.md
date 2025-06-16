@@ -13,7 +13,6 @@ The app displays **temperature**, **weather conditions**, and other relevant dat
 - 🌐 Dynamic weather icons & animated backgrounds  
 - 🔁 Toggle between Celsius & Fahrenheit  
 - 📱 Fully responsive UI with **blue gradient and circular design**  
-- 🌌 Optional "Comillas Negras" star background
 
 ---
 
