@@ -47,30 +47,6 @@ body {
     z-index: -1;
 }
 
-.forecast-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 10px 0;
-    justify-content: center;
-    align-items: stretch;
-    transition: all 0.3s;
-}
-
-.forecast-cards.horizontal {
-    display: flex;
-    gap: 15px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding: 10px 0;
-}
-
-.weather-container h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
 .input-grp {
     margin: 15px 0;
 }
@@ -111,6 +87,12 @@ input#cityInput:focus {
     box-shadow: 0 0 5px #00bcd4;
 }
 
+.weather-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+
 .weather-data,
 .forecast-data {
     font-size: 18px;
@@ -127,6 +109,26 @@ input#cityInput:focus {
     margin-top: 10px;
     opacity: 0.7;
 }
+
+.forecast-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: stretch;
+    transition: all 0.3s;
+}
+
+.forecast-cards.horizontal {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
 
 .forecast-day {
     margin-top: 20px;
@@ -198,6 +200,7 @@ body.light-mode .weather-container {
     cursor: pointer;
     transition: background 0.3s;
 }
+
 .reset-app:hover {
     background-color: #ffffff55;
 }
